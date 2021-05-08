@@ -1,30 +1,23 @@
-var canvas, backgroundImage;
+var box;
+function setup() {
+  createCanvas(displayWidth,displayHeight)
+trex = createSprite(250,550,20,20)
+//trex.velocityX = 2
+console.log(displayWidth/2)
 
-var gameState = 0;
-var contestantCount;
-var allContestants;
-var answer;
-var database;
-
-var question, contestant, quiz;
-
-
-function setup(){
-  canvas = createCanvas(850,400);
-  database = firebase.database();
-  quiz = new Quiz();
-  quiz.getState();
-  quiz.start();
 }
 
+function draw() {
+  background("blue");  
+ 
+  if(keyDown("UP_ARROW")){
+    trex.y = trex.y - 2;
+    console.log(trex.y)
 
-function draw(){
-  background("pink");
-  if(contestantCount === 2){
-    quiz.update(1);
-  }
-  if(gameState === 1){
-    clear();
-    quiz.play();
-  }
+      camera.position.y = trex.y;
+      camera.position.x = displayWidth/2
+
+      }
+ 
+  drawSprites();
 }

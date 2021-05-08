@@ -1,1 +1,2 @@
-# PRO-C38-INFINITE-RUNNER-GAME-1
+# collisionAlgorithm
+Algorithm to detect collision between two objects
